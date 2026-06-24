@@ -1,0 +1,354 @@
+[
+    {
+        "id": "fd8799fed9c92439",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c8a3efc2ac3983e4",
+        "type": "tab",
+        "label": "Mumbai Weather Dashboard"
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "HiveMQ",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "weather_tab",
+        "type": "ui_tab",
+        "name": "Weather Dashboard",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "0c7785f5248a4b47",
+        "type": "ui_tab",
+        "name": "Weather Dashboard",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "weather_group",
+        "type": "ui_group",
+        "name": "Mumbai Weather",
+        "tab": "weather_tab",
+        "order": 1,
+        "disp": true,
+        "width": "12"
+    },
+    {
+        "id": "293d6b77cdd8f1d6",
+        "type": "ui_group",
+        "name": "Mumbai Weather",
+        "tab": "weather_tab",
+        "order": 1,
+        "disp": true,
+        "width": "12"
+    },
+    {
+        "id": "5d299411ebea1122",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f3d52cfd44e250a1",
+        "type": "mqtt in",
+        "z": "c8a3efc2ac3983e4",
+        "name": "Mumbai Temp",
+        "topic": "weather/mumbai/temp",
+        "broker": "mqtt_broker",
+        "inputs": 0,
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "b4ce8fb6096117b9",
+                "3efa792a3c922305",
+                "bf8456a189c0645b"
+            ]
+        ]
+    },
+    {
+        "id": "b04312e263a8579f",
+        "type": "mqtt in",
+        "z": "c8a3efc2ac3983e4",
+        "name": "Mumbai Humidity",
+        "topic": "weather/mumbai/humidity",
+        "broker": "mqtt_broker",
+        "inputs": 0,
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "14b46ef9b35b41df",
+                "efb7dac2efe4c5ce"
+            ]
+        ]
+    },
+    {
+        "id": "f21a002acca9f7f2",
+        "type": "mqtt in",
+        "z": "c8a3efc2ac3983e4",
+        "name": "Mumbai Condition",
+        "topic": "weather/mumbai/condition",
+        "broker": "mqtt_broker",
+        "inputs": 0,
+        "x": 150,
+        "y": 320,
+        "wires": [
+            [
+                "130c917ab9bf68c5"
+            ]
+        ]
+    },
+    {
+        "id": "b4ce8fb6096117b9",
+        "type": "ui_gauge",
+        "z": "c8a3efc2ac3983e4",
+        "group": "weather_group",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "label": "Temperature",
+        "format": "{{value}} °C",
+        "min": 0,
+        "max": 50,
+        "x": 0,
+        "y": 0,
+        "wires": []
+    },
+    {
+        "id": "14b46ef9b35b41df",
+        "type": "ui_gauge",
+        "z": "c8a3efc2ac3983e4",
+        "group": "weather_group",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "label": "Humidity",
+        "format": "{{value}} %",
+        "min": 0,
+        "max": 100,
+        "x": 0,
+        "y": 0,
+        "wires": []
+    },
+    {
+        "id": "130c917ab9bf68c5",
+        "type": "ui_text",
+        "z": "c8a3efc2ac3983e4",
+        "group": "weather_group",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "label": "Condition",
+        "format": "{{msg.payload}}",
+        "x": 0,
+        "y": 0,
+        "wires": []
+    },
+    {
+        "id": "bf8456a189c0645b",
+        "type": "function",
+        "z": "c8a3efc2ac3983e4",
+        "name": "Last Updated",
+        "func": "msg.payload = new Date().toLocaleString(); return msg;",
+        "outputs": 1,
+        "x": 0,
+        "y": 0,
+        "wires": [
+            [
+                "02e1c556c01b05a7"
+            ]
+        ]
+    },
+    {
+        "id": "02e1c556c01b05a7",
+        "type": "ui_text",
+        "z": "c8a3efc2ac3983e4",
+        "group": "weather_group",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "label": "Last Updated",
+        "format": "{{msg.payload}}",
+        "x": 0,
+        "y": 0,
+        "wires": []
+    },
+    {
+        "id": "3efa792a3c922305",
+        "type": "ui_chart",
+        "z": "c8a3efc2ac3983e4",
+        "group": "weather_group",
+        "order": 5,
+        "width": 12,
+        "height": 6,
+        "label": "Temperature History",
+        "chartType": "line",
+        "outputs": 1,
+        "x": 0,
+        "y": 0,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "efb7dac2efe4c5ce",
+        "type": "ui_chart",
+        "z": "c8a3efc2ac3983e4",
+        "name": "",
+        "group": "weather_group",
+        "order": 6,
+        "width": 12,
+        "height": 6,
+        "label": "Humidity History",
+        "chartType": "line",
+        "xformat": "HH:mm:ss",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "",
+        "removeOlderPoints": "",
+        "cutout": "",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 0,
+        "y": 0,
+        "wires": [
+            []
+        ]
+    }
+]
